@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import { AppBar, Box, Button, Container, Divider, Drawer, IconButton, List, ListItem, ListItemButton, ListItemText, Menu, MenuItem, Toolbar, Typography } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
-import logo from '../../Assets/home/logo.png'; // Update the path to your logo
+import logo from '../../Assets/home/logo.png'; 
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { useNavigate } from 'react-router-dom';
 
 function Header() {
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const [anchorElHome, setAnchorElHome] = useState(null); // State to manage the "Home" sub-menu
+  const [anchorElHome, setAnchorElHome] = useState(null);
 
   const toggleDrawer = () => {
     setDrawerOpen(!drawerOpen);
@@ -28,7 +28,7 @@ function Header() {
 
   const drawerList = (
     <Box
-      sx={{ width: '100%', height: '100%', bgcolor: '#EDEDED'}} // Full-screen drawer with background
+      sx={{ width: '100%', height: '100%', bgcolor: '#EDEDED'}}
       role="presentation"
       onClick={toggleDrawer}
       onKeyDown={toggleDrawer}
@@ -39,20 +39,39 @@ function Header() {
           <CloseIcon />
         </IconButton>
       </Box>
+
+      
       <List>
+
         <ListItem disablePadding>
           <ListItemButton onClick={handleHomeClick}>
-            <ListItemText primary="Home" sx={{ textAlign: 'start' }} />
+            <ListItemText onClick={() => navigate("/")} primary="Home" sx={{ textAlign: 'start' }} /><ListItemText/>
           </ListItemButton>
-        </ListItem>
-        {menuItems.map((text) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemText primary={text} sx={{ textAlign: 'start' }} />
-            </ListItemButton>
-          </ListItem>
-        ))}
+        </ListItem> 
+        <ListItem disablePadding>
+          <ListItemButton onClick={handleHomeClick}>
+            <ListItemText onClick={() => navigate("/works")} primary="work" sx={{ textAlign: 'start' }} /><ListItemText/>
+          </ListItemButton>
+        </ListItem> 
+        <ListItem disablePadding>
+          <ListItemButton onClick={handleHomeClick}>
+            <ListItemText onClick={() => navigate("/Services")} primary="Services" sx={{ textAlign: 'start' }} /><ListItemText/>
+          </ListItemButton>
+        </ListItem> 
+        <ListItem disablePadding>
+          <ListItemButton onClick={handleHomeClick}>
+            <ListItemText onClick={() =>navigate("/About")} primary="About Us" sx={{ textAlign: 'start' }} /><ListItemText/>
+          </ListItemButton>
+        </ListItem> 
+        <ListItem disablePadding>
+          <ListItemButton onClick={handleHomeClick}>
+            <ListItemText onClick={() => navigate("/Contact")} primary="Contact Us" sx={{ textAlign: 'start' }} /><ListItemText/>
+          </ListItemButton>
+        </ListItem> 
+
       </List>
+
+
       <Divider />
     </Box>
   );
@@ -71,9 +90,9 @@ function Header() {
               Home 
             </Typography>
             <Typography onClick={() => navigate("/works")} sx={{ color: '#EDEDED', cursor: 'pointer' }}>Works</Typography>
-            <Typography onClick={() => navigate("/Services")}sx={{ color: '#EDEDED', cursor: 'pointer' }}>Services</Typography>
-            <Typography onClick={() =>navigate("/About")}sx={{ color: '#EDEDED', cursor: 'pointer' }}>About Us</Typography>
-            <Typography onClick={() => navigate("/Contact")}sx={{ color: '#EDEDED', cursor: 'pointer' }}>Contact Us</Typography>
+            <Typography onClick={() => navigate("/Services")} sx={{ color: '#EDEDED', cursor: 'pointer' }}>Services</Typography>
+            <Typography onClick={() =>navigate("/About")} sx={{ color: '#EDEDED', cursor: 'pointer' }}>About Us</Typography>
+            <Typography onClick={() => navigate("/Contact")} sx={{ color: '#EDEDED', cursor: 'pointer' }}>Contact Us</Typography>
             <Button sx={{ bgcolor: '#EDEDED', color: 'black', borderRadius: '5px' ,fontSize:"12px",fontFamily:"poppins,sans-serif",fontWeight:"600",letterSpacing:"1px",px:"20px"}}>Get A Quote</Button>
           </Box>
 

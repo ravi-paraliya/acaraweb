@@ -39,7 +39,7 @@ function Work3() {
                                 <img src={img6} alt='' style={{height:"50px",width:"50px",marginTop:"30px",borderRadius:"50%"}}/>
                           </Box>
                           <Box>
-                               <Typography sx={{marginTop:"30px",marginLeft:"10px",fontSize:"15px",fontWeight:"600",letterSpacing:"3px",color:"#5F6575"}}>Mary Kate</Typography>
+                               <Typography sx={{marginTop:"30px",marginLeft:"30px",fontSize:"15px",fontWeight:"600",letterSpacing:"3px",color:"#5F6575"}}>Mary Kate</Typography>
                                <Typography sx={{marginLeft:"30px",fontSize:"13px",display:"flex",justifyContent:"start",color:"#5F6575"}}>Director of Hexatron</Typography>
                            </Box>
                    </Box>
